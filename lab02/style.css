@@ -1,0 +1,437 @@
+/* This is the root element and we use the root in most of the below CSS */
+:root{
+    --orange:#be7017;
+    --black:#444;
+    --light-color:#777;
+    --bg-color:#e6e6e6;
+    --border:.1rem solid rgba(0,0,0,.2);
+    --box-shadow:.4rem .4rem 1rem #ccc,
+                -.4rem -.4rem 1rem #fff;
+    --box-shadow-inset:.4rem .4rem 1rem #ccc inset,
+                      -.4rem -.4rem 1rem #fff inset;
+}
+/* Here is the font section  */
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--bg-color);
+    padding-left: 30rem;
+}
+
+/* This is used to divide the sections and when the menu items are 
+clicked it won't display the other menu items */
+section{
+    min-height: 100vh;
+    /* This will give padding to the text */
+    padding: 2rem;
+}
+
+/* This is for the button stuff. Buttons are download resume and send message */
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:1rem 3.5rem;
+    border-radius: .5rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+    background: none;
+    color:var(--black);
+    box-shadow: var(--box-shadow);
+}
+
+/* When hover on two buttons the shadow will appear and color will change to orange */
+.btn:hover{
+    box-shadow: var(--box-shadow-inset);
+    color:var(--orange);
+}
+
+/* This is for all the headings and if we remove this the css won't apply to all headings */
+.heading{
+    text-align: center;
+    font-size: 5rem;
+    color:var(--black);
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+}
+
+.heading span{
+    color:var(--orange);
+    text-transform: uppercase;
+}
+
+.header{
+    position: fixed;
+    top:0; left: 0;
+    z-index: 999;
+    background: var(--bg-color);
+    width: 30rem;
+    border-right: var(--border);
+    height: 100%;
+    padding:2rem;
+    text-align: center;
+}
+
+/* This header is used for image that is shon in the top left corner */
+.header .user img{
+    margin:1rem 0;
+    border:1rem solid transparent;
+    border-radius: 50%;
+    height: 18rem;
+    width: 18rem;
+    box-shadow: var(--box-shadow);
+}
+
+/* This is for the name below the image in header */
+.header .user h3{
+    color:var(--orange);
+    font-size: 2.5rem;
+}
+
+/* This is for the navbar title section where we can set the font size, border radius, padding */
+.header .navbar a{
+    display: block;
+    margin:1.3rem 0;
+    padding:.5rem;
+    border-radius: 5rem;
+    font-size: 2rem;
+    box-shadow: var(--box-shadow);
+    color:var(--black);
+}
+
+/* This is when we use if we hover on the navigation items */
+.header .navbar a:hover{
+    box-shadow: var(--box-shadow-inset);
+    color: var(--orange);
+}
+
+/* This is for the home name section */
+.home{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* This is for the home content h3 header section */
+.home .content h3{
+    font-size: 7rem;
+    color:var(--black);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+/* This is for the content paragraph section */
+.home .content p{
+    font-size: 2rem;
+    color:var(--orange);
+    padding-bottom: .5rem;
+}
+
+/* The whole about section for container contents appears here */
+.about .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap:2rem;
+}
+
+.about .row .box-container{
+    flex:1 1 40rem;
+    display: flex;
+    gap:1.5rem;
+    flex-wrap: wrap;
+}
+
+.about .row .box-container .box{
+    flex:1 1 18rem;
+    text-align: center;
+    padding:2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+}
+
+/* This is for the about h3 header section */
+.about .row .box-container .box h3{
+    font-size: 5rem;
+    color:var(--black);
+    line-height: 1.1;
+}
+
+/* This is for the about paragraph section */
+.about .row .box-container .box p{
+    font-size: 1.7rem;
+    color:var(--light-color);
+    padding:.5rem 0;
+}
+
+.about .row .content{
+    flex:1 1 40rem;
+}
+
+.about .row .content h3{
+    font-size: 3.5rem;
+    color:var(--black);
+    line-height: 1.8;
+}
+
+.about .row .content h3 span{
+    color:var(--orange);
+}
+
+.about .row .content p{
+    font-size: 1.7rem;
+    color:var(--light-color);
+    line-height: 1.8;
+    padding:1rem 0;
+}
+
+.about .row:nth-child(3){
+    padding-top: 2rem;
+}
+
+.about .row .progress{
+    flex:1 1 40rem;
+}
+
+.about .row .progress h3{
+    color:var(--black);
+    font-weight: normal;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* This is for the progress bar taht is displayed in the about scetion */
+.about .row .progress .bar{
+    box-shadow: var(--box-shadow);
+    border-radius: 5rem;
+    height:2rem;
+    padding:.5rem;
+    margin:1rem 0;
+}
+
+/* Used for progress bar spanning */
+.about .row .progress .bar span{
+    display: block;
+    height: 100%;
+    background: var(--orange);
+    border-radius: 5rem;
+}
+/* For the 1st progress bar and adding the percentage */
+.about .row .progress .bar-1-1 span{
+    width: 95%;
+}
+/* For the 2nd progress bar and adding the percentage */
+.about .row .progress .bar-1-2 span{
+    width: 95%;
+}
+/* For the 3rd progress bar and adding the percentage */
+.about .row .progress .bar-1-3 span{
+    width: 95%;
+}
+/* For the 4th progress bar and adding the percentage */
+.about .row .progress .bar-1-4 span{
+    width: 60%;
+}
+/* For the 5th progress bar and adding the percentage */
+.about .row .progress .bar-1-5 span{
+    width: 65%;
+}
+/* For the 6th progress bar and adding the percentage */
+.about .row .progress .bar-1-6 span{
+    width: 100%;
+}
+
+.resume {
+    height: 300px;
+}
+/* This is for the resume paragraph section styling*/
+.resume .row .content p{
+    text-align: center;
+    font-size: 1.7rem;
+    color:var(--light-color);
+    line-height: 1.8;
+    padding:1rem 0;
+}
+/* In order to align center we will use the below styling */
+.resume{  
+    text-align: center;   
+    width: 100%;  
+    height: 200px;  
+    padding-top: 100px;  
+}  
+
+.workexperience .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap:2rem;
+}
+
+.workexperience .box-container .box{
+    padding:2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    z-index: 0;
+    overflow:hidden;
+}
+
+/* used to style the headings in the each box */
+.workexperience .box-container .box h3{
+    font-size:2rem;
+    padding-bottom: 1rem;
+    color:var(--black);
+}
+
+/* used to style the paragraph in the each box */
+.workexperience .box-container .box p{
+    font-size:1.4rem;
+    line-height: 1.8;
+    color:var(--light-color);
+}
+
+/* This is used for transition on the workexperience */
+.workexperience .box-container .box::before{
+    content: '';
+    position: absolute;
+    top:0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--orange);
+    z-index: -1;
+    clip-path: circle(3rem at 0% 0%);
+    transition: .3s linear;
+}
+/* When we are not hovered it displays a small circle at the top left corner */
+.workexperience .box-container .box:hover::before{    
+    clip-path: circle(100%);
+}
+/* When we are hovered it the container is filled with orange color and font text to white */
+.workexperience .box-container .box:hover > *{
+    color:#fff;
+}
+
+.portfolio .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap:2rem;
+}
+
+.portfolio .box-container .box{
+    height: 25rem;
+    border-radius: .5rem;
+    overflow:hidden;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    border:1rem solid transparent;
+}
+
+.portfolio .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.portfolio .box-container .box .content{
+    position: absolute;
+    top:0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--bg-color);
+    display: grid;
+    place-items: center;
+    transform: scale(0);
+}
+
+.portfolio .box-container .box:hover .content{
+    transform: scale(1);
+}
+
+.portfolio .box-container .box .content h3{
+    font-size: 2.5rem;
+    color:var(--black);
+    text-transform: uppercase;
+    transform: translateY(-5rem);
+    opacity: 0;
+    transition-delay: .3s;
+}
+
+.portfolio .box-container .box:hover .content h3{
+    transform: translateY(0rem);
+    opacity: 1;
+}
+/* Contact form shadow and width are attached here */
+.contact form{
+    margin:1rem auto;
+    max-width: 70rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    padding:2rem;
+}
+/* This is the contact form box attributes */
+.contact form .box{
+    padding:1rem 1.5rem;
+    width:100%;
+    background: none;
+    color:var(--black);
+    font-size: 1.6rem;
+    text-transform: none;
+    margin:.7rem 0;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+}
+
+.contact form textarea{
+    height: 20rem;
+    resize: none;
+}
+
+/* styling the focus for the contact me box */
+.contact form .box:focus{
+    box-shadow: var(--box-shadow-inset);
+}
+
+.contact form .share a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    box-shadow: var(--box-shadow);
+    margin:.5rem;
+    font-size: 2rem;
+    color:var(--black);
+    border-radius: .5rem;
+}
+
+/* Styling applied when we hover on the share items */
+.contact form .share a:hover{
+    box-shadow: var(--box-shadow-inset);
+    color:var(--orange);
+}
+
+.credits{
+    font-size: 2rem;
+    text-align: center;
+    padding:2.5rem 1rem;
+    margin-top: 1rem;
+    border-top: var(--border);
+    color:var(--black);
+}
+
+.credits span{
+    color: var(--orange);
+}
