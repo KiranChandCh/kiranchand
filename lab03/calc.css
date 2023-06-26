@@ -1,0 +1,59 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #e3f9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* This is for the each button styling */
+.calc form input{
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: -8px -8px 15px rgba(225, 225, 225, 0.1) , 5px 5px 15px rgba(225, 225, 225, 0.2);
+    background: transparent;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/* display styled */
+form .display{
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+/* Styling a button sin, cos, tan, power, square root */
+.specific-button {
+    background-color: goldenrod !important;
+    color: white !important;
+}
+
+.calc{
+    background: #381116;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form .display input{
+    text-align: right;
+    flex: 1;
+    font-size: 45px;
+    box-shadow: none;
+}
+form input.equal{
+    width: 145px;
+}
+/* heading styled  */
+.heading{
+    display: flex;
+    justify-content: center;
+    color: #33ffd8;
+}
+
