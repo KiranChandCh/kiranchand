@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .signup-container {
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .name-fields {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .name-fields input[type="text"] {
+            width: 48%; /* Set a fixed width for the First Name and Last Name textboxes */
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .signin-link {
+            margin-top: 15px;
+        }
+
+        .signin-link a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h1>Register</h1>
+        <p>Create your account. It's free and only takes a minute.</p>
+        <form action="/userregistration" method="POST" >
+            <div class="name-fields">
+                <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+            </div>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+             {% if password_check %}
+             <p>password should contain atleast one upper case, one lower case, end with a number and minimum length of 8</p>
+            {% endif %} 
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+            {% if pwd_cpwd %}
+             <p>password and confirm password doesn't match</p>
+            {% endif %} 
+            {% if email_check %}
+             <p>The given Email is already exists in the current Database. Try with the new Email</p>
+            {% endif %} 
+            <input type="submit" value="Register">
+        </form>
+        <p class="signin-link">Already have an account? <a href="{{url_for('userloginredirect')}}">Sign in</a></p>
+    </div>
+</body>
+</html>
