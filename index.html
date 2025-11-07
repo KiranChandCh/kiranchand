@@ -1,188 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- This will display the title on the tab bar -->
-    <title>My Profile</title>
-    <!-- The css file that is appended to the html -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiran Chand — Android | OTT | TV Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    
-<!-- This is the header section -->
-<header class="header">
-    <div class="user">
-        <img src="profile-pic.jpg" alt="">
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="brand">
+      <img src="image.png" alt="Kiran Chand" />
+      <div>
         <h3>Kiran Chand</h3>
+        <p>Android TV & Mobile</p>
+      </div>
     </div>
-
-<!-- This nav bar is for menu items -->
-    <nav class="navbar">
-        <a href="#home">home</a>
-        <a href="#about">about</a>
-        <a href="#resume">resume</a>
-        <a href="#workexperience">work experience</a>
-        <a href="#portfolio">portfolio</a>
-        <a href="#contact">contact</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
     </nav>
-</header>
+  </header>
 
-<!-- This is the home section -->
-<section class="home" id="home">
-    <div class="content">
-        <h3>Chalasani Kiran Chand</h3>
-        <p>i am a Android Application developer</p>
+  <!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <video autoplay loop muted playsinline>
+    <source src="hero-dev.mp4" type="video/mp4" />
+  </video>
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>Chalasani Kiran Chand</h1>
+    <p class="sub">Android Mobile • Android TV • Fire TV  </p>
+
+    <div class="hero-links">
+      <a href="#about" class="hero-btn">About Me</a>
+      <a href="#contact" class="hero-btn">Let's Connect</a>
     </div>
+
+    <div class="hero-links extra-links">
+      <a href="Kiran_Chalasani_resume.pdf" class="hero-btn" target="_blank">
+        <i class="fa-solid fa-file-lines"></i> Resume
+      </a>
+      <a href="https://www.linkedin.com/in/chalasanikiranchand" class="hero-btn" target="_blank">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="mailto:kiranchalasani23@gmail.com" class="hero-btn">
+        <i class="fa-solid fa-envelope"></i> Gmail
+      </a>
+      <a href="imessage://+16592530331" class="hero-btn">
+        <i class="fa-solid fa-comment-dots"></i> iMessage
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- This is the about section -->
+<!-- ===== ABOUT ===== -->
 <section class="about" id="about">
-    <!-- The division has both row and also content where we can add the content in the content division -->
-    <div class="row">
-        <div class="content">
-            <h3>my name is <span>Kiran Chand</span></h3>
-            <p>I am an experienced Android application developer with a specialization in the OTT domain. Over the past 6 years, I have had the privilege of working with renowned clients such as Sun NXT and DStv. Throughout my career, I have gained comprehensive expertise in developing high-quality and user-friendly Android applications. I have a deep understanding of the OTT industry and have successfully delivered projects that enhance the streaming experience for users.
-                In my role, I have contributed to the development of various features and functionalities, including video playback, streaming protocols (HLS and DASH), audio switching, user authentication, and content delivery. I have worked closely with cross-functional teams, including designers and backend developers, to ensure seamless integration and optimal performance.
-                My educational background includes a bachelor’s degree in information technology from JNTUK. This foundation, combined with my hands-on experience, has enabled me to stay updated with the latest industry trends and technological advancements.
-            </p>
-        </div>
-    </div>
-    <!-- This is the progress bar display in the html -->
-    <div class="row">
-        <div class="progress">
-            <h3> Android TV app development <span>95%</span> </h3>
-            <div class="bar bar-1-1"><span></span></div>
-            <h3> Android Mobile App developement <span>95%</span> </h3>
-            <div class="bar bar-1-2"><span></span></div>
-            <h3> Java <span>95%</span> </h3>
-            <div class="bar bar-1-3"><span></span></div>
-            <h3> Kotlin <span>60%</span> </h3>
-            <div class="bar bar-1-4"><span></span></div>
-            <h3> GIT <span>65%</span> </h3>
-            <div class="bar bar-1-5"><span></span></div>
-            <h3> Agile <span>100%</span> </h3>
-            <div class="bar bar-1-6"><span></span></div>
-        </div>
-    </div>
+  <h2>About</h2>
+
+  <p>
+    I’m <b>Chalasani Kiran Chand</b> an Android engineer focused on delivering fluid, 
+    performance-optimized apps for Android Mobile, Android TV, and Fire TV. My work blends beautiful 
+    UI design with solid architecture built using Jetpack Compose, Kotlin Coroutines, and ExoPlayer.
+  </p>
+
+  <p>
+    I’m an Android developer with around eight years of experience building apps that people actually 
+    enjoy using. Over the years, I’ve worked on everything from media-streaming platforms to large-scale 
+    data-driven products, focusing on performance, design, and clean architecture.
+  </p>
+
+  <p>
+    I love the mix of creativity and logic that comes with Android development turning an idea into 
+    something interactive and intuitive. I work mainly with Kotlin and Jetpack Compose, and I’m comfortable 
+    across the full stack of Android from UI and background services to analytics and optimization.
+  </p>
+
+  <p>
+    What keeps me excited about this field is the constant evolution new tools, better patterns, and 
+    smarter ways to build. For me, it’s not just about writing code; it’s about crafting experiences 
+    that feel effortless for the user and solid under the hood.
+  </p>
 </section>
 
-<!-- This is the resume section -->
-<section class="resume" id="resume">
-    <h1 class="heading"> my <span>Resume</span> </h1>
-    <!-- The division is just a row -->
-    <div class="row">
-        <div class="content">
-        <p>Download my resume by clicking on the button below</p>
-        <a href="Kiran_Chalasani_resume.pdf" class="btn">download Resume</a>
+
+
+
+  <!-- ===== TOOLS ===== -->
+<section class="tools-section">
+  <div class="marquee">
+    <div class="logo-track">
+      <!-- Original tool-item sequence -->
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/kotlin/7F52FF"><span>Kotlin</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/jetpackcompose/4285F4"><span>Jetpack Compose</span></div>
+      <div class="tool-item"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png"><span>Java</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/firebase/FFCA28"><span>Firebase</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/androidstudio/3DDC84"><span>Android Studio</span></div>
+      <div class="tool-item"><img src="https://cdn-icons-png.flaticon.com/512/5969/5969032.png"><span>Retrofit</span></div>
+      <div class="tool-item"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"><span>ExoPlayer</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/github/FFFFFF"><span>GitHub</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/bitrise/683D87"><span>Bitrise</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/jenkins/D24939"><span>Jenkins</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/postman/FF6C37"><span>Postman</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/jira/0052CC"><span>Jira</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/sentry/362D59"><span>Sentry</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/mixpanel/7856FF"><span>Mixpanel</span></div>
+      <div class="tool-item"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968703.png"><span>CleverTap</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/slack/4A154B"><span>Slack</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/googleplay/34A853"><span>Play Store</span></div>
     </div>
+
+    <!-- Duplicate for seamless scroll -->
+    <div class="logo-track">
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/kotlin/7F52FF"><span>Kotlin</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/jetpackcompose/4285F4"><span>Jetpack Compose</span></div>
+      <div class="tool-item"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png"><span>Java</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/firebase/FFCA28"><span>Firebase</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/androidstudio/3DDC84"><span>Android Studio</span></div>
+      <div class="tool-item"><img src="https://cdn-icons-png.flaticon.com/512/5969/5969032.png"><span>Retrofit</span></div>
+      <div class="tool-item"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"><span>ExoPlayer</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/github/FFFFFF"><span>GitHub</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/bitrise/683D87"><span>Bitrise</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/jenkins/D24939"><span>Jenkins</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/postman/FF6C37"><span>Postman</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/jira/0052CC"><span>Jira</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/sentry/362D59"><span>Sentry</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/mixpanel/7856FF"><span>Mixpanel</span></div>
+      <div class="tool-item"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968703.png"><span>CleverTap</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/slack/4A154B"><span>Slack</span></div>
+      <div class="tool-item"><img src="https://cdn.simpleicons.org/googleplay/34A853"><span>Play Store</span></div>
     </div>
+  </div>
 </section>
 
-<!-- This is the workexperience section -->
-<section class="workexperience" id="workexperience">
-    <h1 class="heading"> my <span>work experience</span> </h1>
-    <!-- box-container where the division happens in boxes -->
-    <div class="box-container">
-        <div class="box">
-            <h3>App development</h3>
-            <p>I develop Android applications from scratch where the app can be integrated with the API's in order to fetch the data from server.</p>
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="exp-section" id="experience">
+    <div class="exp-block">
+      <div class="exp-content">
+        <p class="exp-company">Jun 2024 – Present · Begin Software</p>
+        <h2>Senior Software Engineer — Zeam Media</h2>
+        <p class="exp-typing">Building Zeam — a modern OTT streaming experience. Focused on Fire TV and Android TV platforms, optimizing video playback with ExoPlayer, improving startup times, and refining UI/UX transitions.</p>
+      </div>
+      <div class="preview">
+        <img src="zeam.gif" alt="Zeam Media" />
+        <div class="cta-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.syncbak.zeam" class="cta-btn" target="_blank">Play Store</a>
+          <a href="https://www.amazon.com/Syncbak-Inc-Zeam/dp/B0CTQRVHKB" class="cta-btn" target="_blank">Fire TV</a>
         </div>
-        <div class="box">
-            <h3>OTT(Over-The-Top)</h3>
-            <p>I have experience in OTT applications where users can watch the videos in the mobile which was streamed over Internet.</p>
-        </div>
-        <div class="box">
-            <h3>responsive application</h3>
-            <p>I used the latest fetaures for the App development using languages like Kotlin and MVVM pattern.</p>
-        </div>
-        <div class="box">
-            <h3>Android TV applications</h3>
-            <p>In order to look at my work you can check the SunNXT TV application where it streams the video coming over internet.</p>
-        </div>
-        <div class="box">
-            <h3>Android Mobile application</h3>
-            <p>In order to look at my work you can check the SunNXT and DSTv mobile applications where it streams the video coming over internet.</p>
-        </div>
-        <div class="box">
-            <h3>Set-up Boxes</h3>
-            <p>I have developed a launcher which will show up when an setup box is booted. We can naviagte through different apps from the launcher.</p>
-        </div>
+      </div>
     </div>
-</section>
 
-<!-- Below is my portfolio -->
-<!-- This is the portfolio section -->
-<section class="portfolio" id="portfolio">
-    <h1 class="heading"> my <span>portfolio</span> </h1>
-    <div class="box-container">
-        <div class="box">
-            <img href="https://sunnxt.com/" src="sunnxt-1.jpg" alt="">
-            <div class="content">
-                <h3>SunNXT TV app</h3>
-            </div>
+    <div class="exp-block flip">
+      <div class="exp-content">
+        <p class="exp-company">2022 – 2024 · Tata Elxsi</p>
+        <h2>Android TV Developer — DStv Stream</h2>
+        <p class="exp-typing">Built and maintained the DStv Stream app for Smart TVs and Android TV platforms, integrating video playback, authentication flows, and analytics tracking for millions of users across Africa.</p>
+      </div>
+      <div class="preview">
+        <img src="dstv.gif" alt="DStv Stream" />
+        <div class="cta-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.dstvmobile.android" class="cta-btn" target="_blank">Play Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.dstvmobile.android" class="cta-btn" target="_blank">Android TV</a>
         </div>
-        <div class="box">
-            <img href="https://sunnxt.com/" src="sunnxt-2.jpg" alt="">
-            <div class="content">
-                <h3>SunNXT Mobile app</h3>
-            </div>
-        </div>
-        <div class="box">
-            <img href="https://sunnxt.com/" src="sunnxt-3.jpg" alt="">
-            <div class="content">
-                <h3>SunNXT Tab app</h3>
-            </div>
-        </div>
-        <div class="box">
-            <img href="https://www.dstv.com/en-za" src="dstv-4.jpg" alt="">
-            <div class="content">
-                <h3>DSTv mobile app</h3>
-            </div>
-        </div>
-        <div class="box">
-            <img href="https://www.dstv.com/en-za" src="dstv-5.jpg" alt="">
-            <div class="content">
-                <h3>DSTv TV app</h3>
-            </div>
-        </div>
-        <div class="box">
-            <img src="dstv-6.jpg" href="https://www.dstv.com/en-za" alt="">
-            <div class="content">
-                <h3>DSTv Tab app</h3>
-            </div>
-        </div>
+      </div>
     </div>
-</section>
 
-<!-- Below is the html form where we use to submit our queries  -->
-<!-- This is the contact section -->
-<section class="contact" id="contact">
-    <h1 class="heading"> <span>contact</span> me </h1>
-    <form action="">
-        <input type="text" placeholder="your name" class="box">
-        <input type="email" placeholder="your email" class="box">
-        <input type="text" placeholder="subject" class="box">
-        <textarea name="" class="box" placeholder="your message" id="" cols="30" rows="10"></textarea>
-        <a href="#" class="btn">send message</a>
-    
-        <div class="share" style="text-align:center;">
-            <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
-            <a href="https://twitter.com/?lang=en" class="fab fa-twitter"></a>
-            <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
-            <a href="https://www.linkedin.com/in/chalasanikiranchand" class="fab fa-linkedin"></a>
+    <div class="exp-block">
+      <div class="exp-content">
+        <p class="exp-company">2018 – 2022 · Apalya Technologies</p>
+        <h2>Android Developer — Sun NXT</h2>
+        <p class="exp-typing">Developed and maintained the Sun NXT app across Android platforms, implementing adaptive streaming with ExoPlayer, analytics integrations, and performance tuning for millions of users.</p>
+      </div>
+      <div class="preview">
+        <img src="sun-nxt.gif" alt="Sun NXT" />
+        <div class="cta-buttons">
+          <a href="https://play.google.com/store/apps/details?id=com.suntv.sunnxt" class="cta-btn" target="_blank">Play Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.suntv.sunnxt" class="cta-btn" target="_blank">Android TV</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <p>Let’s build something great together!</p>
+    <div class="contact-details">
+      <p><b>📞 Phone:</b> +1 (555) 123-4567</p>
+      <p><b>📧 Email:</b> <a href="mailto:kiranchalasani23@gmail.com">kiranchalasani23@gmail.com</a></p>
+      <p><b>🔗 LinkedIn:</b> <a href="https://www.linkedin.com/in/kiran-chand" target="_blank">linkedin.com/in/kiran-chand</a></p>
+    </div>
+
+    <form action="https://formspree.io/f/your_form_id_here" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="_replyto" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
     </form>
+  </section>
 
-    <!-- If we have used the library and we can get the pre built images for social media websites -->
-</section>
-
-<div class="credits"> created by <span>Chalasani Kiran Chand</span></div>
+  <footer>
+    © 2025 Kiran Chand — Android | OTT | TV Developer
+  </footer>
+ <script>
+const fadeEls = document.querySelectorAll(".about p");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = "running";
+      observer.unobserve(entry.target);
+    }
+  });
+});
+fadeEls.forEach(el => {
+  el.style.animationPlayState = "paused";
+  observer.observe(el);
+});
+</script>
 
 </body>
 </html>

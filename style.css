@@ -1,437 +1,402 @@
-/* This is the root element and we use the root in most of the below CSS */
-:root{
-    --orange:#be7017;
-    --black:#444;
-    --light-color:#777;
-    --bg-color:#e6e6e6;
-    --border:.1rem solid rgba(0,0,0,.2);
-    --box-shadow:.4rem .4rem 1rem #ccc,
-                -.4rem -.4rem 1rem #fff;
-    --box-shadow-inset:.4rem .4rem 1rem #ccc inset,
-                      -.4rem -.4rem 1rem #fff inset;
-}
-/* Here is the font section  */
-*{
-    font-family: 'Poppins', sans-serif;
-    margin:0; padding:0;
-    box-sizing: border-box;
-    outline: none; border:none;
-    text-decoration: none;
-    text-transform: capitalize;
-    transition: .2s linear;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  color: #eee;
+  background: radial-gradient(circle at top, #0e0e0e, #050505);
+  scroll-behavior: smooth;
 }
 
-body{
-    background: var(--bg-color);
-    padding-left: 30rem;
+/* ===== Header ===== */
+header {
+  position: fixed;
+  top: 0; width: 100%;
+  background: rgba(15,15,15,0.85);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 50px; z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,255,255,0.2);
+  box-shadow: 0 0 10px rgba(0,255,255,0.15);
+}
+header .brand { display: flex; align-items: center; gap: 10px; }
+header .brand img { width: 42px; height: 42px; border-radius: 50%; }
+header nav a {
+  color: #ccc; text-decoration: none; margin-left: 20px; font-weight: 500;
+}
+header nav a:hover { color: #00ffff; }
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  background-color: #000;
 }
 
-/* This is used to divide the sections and when the menu items are 
-clicked it won't display the other menu items */
-section{
-    min-height: 100vh;
-    /* This will give padding to the text */
-    padding: 2rem;
+.hero video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;              /* ✅ behind everything */
+  opacity: 0.35;           /* ✅ visible but dimmed */
+  pointer-events: none;
+  background: #000;        /* ✅ prevents flash of black background */
 }
 
-/* This is for the button stuff. Buttons are download resume and send message */
-.btn{
-    margin-top: 1rem;
-    display: inline-block;
-    padding:1rem 3.5rem;
-    border-radius: .5rem;
-    font-size: 1.7rem;
-    cursor: pointer;
-    background: none;
-    color:var(--black);
-    box-shadow: var(--box-shadow);
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;              /* ✅ sits above video */
 }
 
-/* When hover on two buttons the shadow will appear and color will change to orange */
-.btn:hover{
-    box-shadow: var(--box-shadow-inset);
-    color:var(--orange);
+.hero-content {
+  position: relative;
+  z-index: 2;              /* ✅ ensures text is above everything */
 }
 
-/* This is for all the headings and if we remove this the css won't apply to all headings */
-.heading{
+.hero h1 {
+  font-size: 4rem;             /* ⬆ increased from 3rem */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6); /* ✅ subtle glow for contrast */
+}
+
+.hero .sub {
+  font-size: 1.4rem;           /* ⬆ increased from default (approx. 1rem) */
+  font-weight: 400;
+  color: #00ffff;
+  margin-bottom: 30px;
+  letter-spacing: 0.4px;
+}
+.hero-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.extra-links {
+  margin-top: 20px;           /* space below About/Contact row */
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;            /* ✅ wraps neatly on smaller screens */
+}
+
+.extra-links .hero-btn {
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.extra-links .hero-btn:hover {
+  background: #00ffff;
+  color: #000;
+  transform: translateY(-2px);
+}
+.hero-btn {
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #00ffff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.hero-btn i {
+  margin-right: 8px;
+  font-size: 1.1rem;
+  vertical-align: middle;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.hero-btn:hover i {
+  transform: scale(1.2);
+  color: #000;
+}
+
+/* ===== About ===== */
+/* ===== About Section ===== */
+.about {
+  padding: 160px 8%;          /* ⬅️ reduced side padding for more width */
+  max-width: 1800px;          /* ⬅️ allows more horizontal spread */
+  margin: auto;
+  text-align: left;           /* ⬅️ left-aligned looks cleaner for wider spans */
+}
+
+.about h2 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 12px rgba(0,255,255,0.3);
+}
+
+/* Paragraph styling */
+.about p {
+  color: #ccc;
+  line-height: 1.9;
+  margin-bottom: 30px;
+  font-size: 1.25rem;         /* ⬅️ slightly larger text for readability */
+  max-width: 1100px;          /* ⬅️ controls line length for elegance */
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+}
+
+/* fade in one by one */
+.about p:nth-of-type(1) { animation-delay: 0.3s; }
+.about p:nth-of-type(2) { animation-delay: 1.2s; }
+.about p:nth-of-type(3) { animation-delay: 2.1s; }
+.about p:nth-of-type(4) { animation-delay: 3s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 1024px) {
+  .about {
+    padding: 120px 10%;
     text-align: center;
-    font-size: 5rem;
-    color:var(--black);
-    text-transform: uppercase;
-    padding-bottom: 2rem;
-}
-
-.heading span{
-    color:var(--orange);
-    text-transform: uppercase;
-}
-
-.header{
-    position: fixed;
-    top:0; left: 0;
-    z-index: 999;
-    background: var(--bg-color);
-    width: 30rem;
-    border-right: var(--border);
-    height: 100%;
-    padding:2rem;
+  }
+  .about p {
+    font-size: 1.1rem;
+    max-width: 90%;
     text-align: center;
+  }
 }
 
-/* This header is used for image that is shon in the top left corner */
-.header .user img{
-    margin:1rem 0;
-    border:1rem solid transparent;
-    border-radius: 50%;
-    height: 18rem;
-    width: 18rem;
-    box-shadow: var(--box-shadow);
+
+/* ===== Tools Belt (Fixed Continuous Scroll) ===== */
+/* ===== Tools Belt (Perfect Continuous Scroll) ===== */
+.tools-section {
+  background: #0f0f0f;
+  overflow: hidden;
+  padding: 40px 0;
+  position: relative;
 }
 
-/* This is for the name below the image in header */
-.header .user h3{
-    color:var(--orange);
-    font-size: 2.5rem;
+/* outer wrapper */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: scrollBelt 40s linear infinite;
 }
 
-/* This is for the navbar title section where we can set the font size, border radius, padding */
-.header .navbar a{
-    display: block;
-    margin:1.3rem 0;
-    padding:.5rem;
-    border-radius: 5rem;
-    font-size: 2rem;
-    box-shadow: var(--box-shadow);
-    color:var(--black);
+/* each track */
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  flex-shrink: 0;
 }
 
-/* This is when we use if we hover on the navigation items */
-.header .navbar a:hover{
-    box-shadow: var(--box-shadow-inset);
-    color: var(--orange);
+/* continuous loop */
+@keyframes scrollBelt {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-/* This is for the home name section */
-.home{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+/* icons */
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  color: #ccc;
+  font-family: "Poppins", sans-serif;
 }
 
-/* This is for the home content h3 header section */
-.home .content h3{
-    font-size: 7rem;
-    color:var(--black);
-    line-height: 1.1;
-    text-transform: uppercase;
-}
-/* This is for the content paragraph section */
-.home .content p{
-    font-size: 2rem;
-    color:var(--orange);
-    padding-bottom: .5rem;
+.tool-item img {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* The whole about section for container contents appears here */
-.about .row{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap-reverse;
-    gap:2rem;
+.tool-item:hover img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.9));
 }
 
-.about .row .box-container{
-    flex:1 1 40rem;
-    display: flex;
-    gap:1.5rem;
-    flex-wrap: wrap;
+.tool-item span {
+  font-size: 13px;
+  color: #ddd;
 }
 
-.about .row .box-container .box{
-    flex:1 1 18rem;
-    text-align: center;
-    padding:2rem;
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
+/* edge fade */
+.tools-section::before,
+.tools-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
 
-/* This is for the about h3 header section */
-.about .row .box-container .box h3{
-    font-size: 5rem;
-    color:var(--black);
-    line-height: 1.1;
+.tools-section::before {
+  left: 0;
+  background: linear-gradient(to right, #0f0f0f 0%, transparent 100%);
+}
+.tools-section::after {
+  right: 0;
+  background: linear-gradient(to left, #0f0f0f 0%, transparent 100%);
 }
 
-/* This is for the about paragraph section */
-.about .row .box-container .box p{
-    font-size: 1.7rem;
-    color:var(--light-color);
-    padding:.5rem 0;
+
+/* ===== Experience ===== */
+.exp-section {
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+  padding: 140px 8% 100px;
+}
+.exp-block { display: flex; justify-content: space-between; align-items: center; gap: 60px; }
+.exp-block.flip { flex-direction: row-reverse; }
+.exp-content { flex: 1; max-width: 520px; }
+.exp-company { color: #888; margin-bottom: 8px; font-size: 0.9rem; }
+.exp-content h2 { color: #fff; font-size: 1.4rem; margin-bottom: 15px; }
+.exp-typing {
+  color: #ccc;
+  line-height: 1.7;
+  border-right: 3px solid #00ffff;
+  display: inline-block;
+  overflow: hidden;
+  white-space: pre-wrap;  /* ✅ allows normal wrapping while preserving spaces */
+  word-break: break-word;
+  animation: typing 6s steps(var(--steps, 120)) forwards,
+             blink 0.6s step-end infinite;
 }
 
-.about .row .content{
-    flex:1 1 40rem;
+/* The magic: animate character width, not element width */
+@keyframes typing {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
 }
 
-.about .row .content h3{
-    font-size: 3.5rem;
-    color:var(--black);
-    line-height: 1.8;
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
-.about .row .content h3 span{
-    color:var(--orange);
+
+.preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0,255,255,0.25);
+}
+.preview img {
+  width: 85%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+.preview:hover img { transform: scale(1.05); }
+.cta-buttons { margin-top: 12px; display: flex; gap: 10px; }
+.cta-btn {
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+.cta-btn:hover { background: #00ffff; color: #000; }
+
+/* ===== Contact ===== */
+.contact {
+  padding: 120px 10%;
+  text-align: center;
+  background: linear-gradient(180deg, #111, #0a0a0a);
+}
+.contact h2 { font-size: 2.2rem; margin-bottom: 15px; }
+.contact p { color: #aaa; margin-bottom: 20px; }
+.contact-details p { margin: 5px 0; }
+.contact-details a { color: #00ffff; text-decoration: none; }
+.contact-form {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 15px; max-width: 500px; margin: 30px auto 0;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%; padding: 12px; border-radius: 8px;
+  border: 1px solid #333; background: #111; color: #fff;
+}
+.contact-form button {
+  background: #00ffff; border: none; color: #000;
+  padding: 10px 24px; border-radius: 8px;
+  cursor: pointer; font-weight: 600; transition: 0.3s;
+}
+.contact-form button:hover { background: #00cccc; }
+
+/* ===== Footer ===== */
+footer {
+  text-align: center; padding: 40px;
+  color: #777;
+  border-top: 1px solid #1d1d1d;
+  font-size: 0.9rem;
 }
 
-.about .row .content p{
-    font-size: 1.7rem;
-    color:var(--light-color);
-    line-height: 1.8;
-    padding:1rem 0;
-}
-
-.about .row:nth-child(3){
-    padding-top: 2rem;
-}
-
-.about .row .progress{
-    flex:1 1 40rem;
-}
-
-.about .row .progress h3{
-    color:var(--black);
-    font-weight: normal;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* This is for the progress bar taht is displayed in the about scetion */
-.about .row .progress .bar{
-    box-shadow: var(--box-shadow);
-    border-radius: 5rem;
-    height:2rem;
-    padding:.5rem;
-    margin:1rem 0;
-}
-
-/* Used for progress bar spanning */
-.about .row .progress .bar span{
-    display: block;
-    height: 100%;
-    background: var(--orange);
-    border-radius: 5rem;
-}
-/* For the 1st progress bar and adding the percentage */
-.about .row .progress .bar-1-1 span{
-    width: 95%;
-}
-/* For the 2nd progress bar and adding the percentage */
-.about .row .progress .bar-1-2 span{
-    width: 95%;
-}
-/* For the 3rd progress bar and adding the percentage */
-.about .row .progress .bar-1-3 span{
-    width: 95%;
-}
-/* For the 4th progress bar and adding the percentage */
-.about .row .progress .bar-1-4 span{
-    width: 60%;
-}
-/* For the 5th progress bar and adding the percentage */
-.about .row .progress .bar-1-5 span{
-    width: 65%;
-}
-/* For the 6th progress bar and adding the percentage */
-.about .row .progress .bar-1-6 span{
-    width: 100%;
-}
-
-.resume {
-    height: 300px;
-}
-/* This is for the resume paragraph section styling*/
-.resume .row .content p{
-    text-align: center;
-    font-size: 1.7rem;
-    color:var(--light-color);
-    line-height: 1.8;
-    padding:1rem 0;
-}
-/* In order to align center we will use the below styling */
-.resume{  
-    text-align: center;   
-    width: 100%;  
-    height: 200px;  
-    padding-top: 100px;  
-}  
-
-.workexperience .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-    gap:2rem;
-}
-
-.workexperience .box-container .box{
-    padding:2rem;
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
-    position: relative;
-    z-index: 0;
-    overflow:hidden;
-}
-
-/* used to style the headings in the each box */
-.workexperience .box-container .box h3{
-    font-size:2rem;
-    padding-bottom: 1rem;
-    color:var(--black);
-}
-
-/* used to style the paragraph in the each box */
-.workexperience .box-container .box p{
-    font-size:1.4rem;
-    line-height: 1.8;
-    color:var(--light-color);
-}
-
-/* This is used for transition on the workexperience */
-.workexperience .box-container .box::before{
-    content: '';
-    position: absolute;
-    top:0; left: 0;
-    height: 100%;
-    width: 100%;
-    background: var(--orange);
-    z-index: -1;
-    clip-path: circle(3rem at 0% 0%);
-    transition: .3s linear;
-}
-/* When we are not hovered it displays a small circle at the top left corner */
-.workexperience .box-container .box:hover::before{    
-    clip-path: circle(100%);
-}
-/* When we are hovered it the container is filled with orange color and font text to white */
-.workexperience .box-container .box:hover > *{
-    color:#fff;
-}
-
-.portfolio .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-    gap:2rem;
-}
-
-.portfolio .box-container .box{
-    height: 25rem;
-    border-radius: .5rem;
-    overflow:hidden;
-    box-shadow: var(--box-shadow);
-    position: relative;
-    border:1rem solid transparent;
-}
-
-.portfolio .box-container .box img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.portfolio .box-container .box .content{
-    position: absolute;
-    top:0; left: 0;
-    height: 100%;
-    width: 100%;
-    background: var(--bg-color);
-    display: grid;
-    place-items: center;
-    transform: scale(0);
-}
-
-.portfolio .box-container .box:hover .content{
-    transform: scale(1);
-}
-
-.portfolio .box-container .box .content h3{
-    font-size: 2.5rem;
-    color:var(--black);
-    text-transform: uppercase;
-    transform: translateY(-5rem);
-    opacity: 0;
-    transition-delay: .3s;
-}
-
-.portfolio .box-container .box:hover .content h3{
-    transform: translateY(0rem);
-    opacity: 1;
-}
-/* Contact form shadow and width are attached here */
-.contact form{
-    margin:1rem auto;
-    max-width: 70rem;
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
-    padding:2rem;
-}
-/* This is the contact form box attributes */
-.contact form .box{
-    padding:1rem 1.5rem;
-    width:100%;
-    background: none;
-    color:var(--black);
-    font-size: 1.6rem;
-    text-transform: none;
-    margin:.7rem 0;
-    box-shadow: var(--box-shadow);
-    border-radius: .5rem;
-}
-
-.contact form textarea{
-    height: 20rem;
-    resize: none;
-}
-
-/* styling the focus for the contact me box */
-.contact form .box:focus{
-    box-shadow: var(--box-shadow-inset);
-}
-
-.contact form .share a{
-    height: 5rem;
-    width: 5rem;
-    line-height: 5rem;
-    box-shadow: var(--box-shadow);
-    margin:.5rem;
-    font-size: 2rem;
-    color:var(--black);
-    border-radius: .5rem;
-}
-
-/* Styling applied when we hover on the share items */
-.contact form .share a:hover{
-    box-shadow: var(--box-shadow-inset);
-    color:var(--orange);
-}
-
-.credits{
-    font-size: 2rem;
-    text-align: center;
-    padding:2.5rem 1rem;
-    margin-top: 1rem;
-    border-top: var(--border);
-    color:var(--black);
-}
-
-.credits span{
-    color: var(--orange);
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  header { padding: 10px 20px; flex-direction: column; gap: 10px; }
+  header nav a { margin-left: 10px; font-size: 0.9rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero .sub { font-size: 1rem; }
+  .hero-links { flex-direction: column; gap: 12px; }
+  .tool-item img { height: 40px; width: 40px; }
+  .logo-track { gap: 60px; }
+  .exp-block, .exp-block.flip { flex-direction: column; text-align: center; }
+  .preview img { width: 100%; }
+  .exp-typing { white-space: normal; border: none; animation: none; }
 }
